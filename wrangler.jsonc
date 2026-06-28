@@ -6,10 +6,8 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "react-router-hono-fullstack-template",
 	"compatibility_date": "2025-10-08",
+	"compatibility_flags": ["nodejs_compat"],
 	"main": "./workers/app.ts",
-	"vars": {
-		"VALUE_FROM_CLOUDFLARE": "Hello from Hono/CF"
-	},
 	"d1_databases": [
 		{
 			"binding": "DB",

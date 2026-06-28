@@ -6,11 +6,120 @@
 		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+/* shadcn/ui 主题 token */
+:root {
+	--background: hsl(0 0% 100%);
+	--foreground: hsl(240 10% 3.9%);
+	--card: hsl(0 0% 100%);
+	--card-foreground: hsl(240 10% 3.9%);
+	--primary: hsl(240 5.9% 10%);
+	--primary-foreground: hsl(0 0% 98%);
+	--secondary: hsl(240 4.8% 95.9%);
+	--secondary-foreground: hsl(240 5.9% 10%);
+	--muted: hsl(240 4.8% 95.9%);
+	--muted-foreground: hsl(240 3.8% 46.1%);
+	--accent: hsl(240 4.8% 95.9%);
+	--accent-foreground: hsl(240 5.9% 10%);
+	--destructive: hsl(0 84.2% 60.2%);
+	--destructive-foreground: hsl(0 0% 98%);
+	--border: hsl(240 5.9% 90%);
+	--input: hsl(240 5.9% 90%);
+	--ring: hsl(240 5.9% 10%);
+}
+
+.dark {
+	--background: hsl(240 10% 3.9%);
+	--foreground: hsl(0 0% 98%);
+	--card: hsl(240 10% 3.9%);
+	--card-foreground: hsl(0 0% 98%);
+	--primary: hsl(0 0% 98%);
+	--primary-foreground: hsl(240 5.9% 10%);
+	--secondary: hsl(240 3.7% 15.9%);
+	--secondary-foreground: hsl(0 0% 98%);
+	--muted: hsl(240 3.7% 15.9%);
+	--muted-foreground: hsl(240 5% 64.9%);
+	--accent: hsl(240 3.7% 15.9%);
+	--accent-foreground: hsl(0 0% 98%);
+	--destructive: hsl(0 62.8% 30.6%);
+	--destructive-foreground: hsl(0 0% 98%);
+	--border: hsl(240 3.7% 15.9%);
+	--input: hsl(240 3.7% 15.9%);
+	--ring: hsl(240 4.9% 83.9%);
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+}
+
 html,
 body {
-	@apply bg-white dark:bg-gray-950;
+	@apply bg-background text-foreground;
 
 	@media (prefers-color-scheme: dark) {
 		color-scheme: dark;
 	}
+}
+
+/* 助手 markdown 回复的基础排版 */
+.prose-chat {
+	@apply leading-relaxed;
+}
+.prose-chat > :first-child {
+	@apply mt-0;
+}
+.prose-chat > :last-child {
+	@apply mb-0;
+}
+.prose-chat p,
+.prose-chat ul,
+.prose-chat ol,
+.prose-chat pre,
+.prose-chat blockquote {
+	@apply my-2;
+}
+.prose-chat ul {
+	@apply list-disc pl-5;
+}
+.prose-chat ol {
+	@apply list-decimal pl-5;
+}
+.prose-chat code {
+	@apply rounded bg-background/60 px-1 py-0.5 text-[0.85em];
+}
+.prose-chat pre {
+	@apply overflow-x-auto rounded-lg bg-background/70 p-3;
+}
+.prose-chat pre code {
+	@apply bg-transparent p-0;
+}
+.prose-chat h1,
+.prose-chat h2,
+.prose-chat h3 {
+	@apply mt-3 mb-1 font-semibold;
+}
+.prose-chat a {
+	@apply underline;
+}
+.prose-chat table {
+	@apply my-2 w-full border-collapse text-left;
+}
+.prose-chat th,
+.prose-chat td {
+	@apply border border-border px-2 py-1;
 }

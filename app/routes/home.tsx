@@ -1,13 +1,13 @@
 import type { Route } from "./+types/home";
-import { TaskList } from "../components/task-list";
+import { Chat } from "../components/chat";
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "任务列表" },
-		{ name: "description", content: "一个简单的任务列表 CRUD 应用" },
+		{ title: "DeepSeek 对话" },
+		{ name: "description", content: "基于 DeepSeek 的 AI 对话助手" },
 	];
 }
 
 export default function Home() {
-	return <TaskList />;
+	return <Chat />;
 }
