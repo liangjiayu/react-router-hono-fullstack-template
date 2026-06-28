@@ -1,17 +1,13 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import { TaskList } from "../components/task-list";
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "New React Router App" },
-		{ name: "description", content: "Welcome to React Router!" },
+		{ title: "任务列表" },
+		{ name: "description", content: "一个简单的任务列表 CRUD 应用" },
 	];
 }
 
-export function loader({ context }: Route.LoaderArgs) {
-	return { message: context.cloudflare.env.VALUE_FROM_CLOUDFLARE };
-}
-
-export default function Home({ loaderData }: Route.ComponentProps) {
-	return <Welcome message={loaderData.message} />;
+export default function Home() {
+	return <TaskList />;
 }

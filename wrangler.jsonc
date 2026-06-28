@@ -10,6 +10,14 @@
 	"vars": {
 		"VALUE_FROM_CLOUDFLARE": "Hello from Hono/CF"
 	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "task-list-db",
+			"database_id": "a11507fe-f53b-4f39-806d-337292f1fb80",
+			"migrations_dir": "migrations"
+		}
+	],
 	"observability": {
 		"enabled": true
 	},
